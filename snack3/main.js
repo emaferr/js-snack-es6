@@ -10,13 +10,13 @@ function arrayContenuto ( array , valoreMin , valoreMax ) {
 
     array.forEach( ( elemento , index ) => {
 
-        if ( index < valoreMax - 1 && index >= valoreMin ) {
+        if ( index < valoreMax - 1 && index >= valoreMin && valoreMin < valoreMax ) {
 
           nuovoArray.push( elemento )
 
-        }
-        
-    });
+        } 
+
+    } );
 
     // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 
