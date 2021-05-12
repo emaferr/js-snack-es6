@@ -28,15 +28,41 @@ const bici = [
 
 // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
-const [ , bicidue ] = bici ;
+// Metodo diretto
 
-const { nome , peso } = bicidue ;
+// const [ , bicidue ] = bici ;
+
+// const { nome , peso } = bicidue ;
+
+// document.getElementById( "bici_leggera" ).insertAdjacentHTML( "beforeend" , 
+
+// `
+
+// <li>La bici più leggiadra è ${ nome } con un peso complessivo di ${ peso } grammi!</li>
+
+// `
+// ) ;
+
+// Metodo con verifica
+
+let biciLeggera = bici[0] ;
+
+for (let i = 0; i < bici.length; i++) {
+    const biciSingola = bici[i];
+    
+    if ( biciSingola.peso < biciLeggera.peso ) {
+
+        biciLeggera = biciSingola
+
+    }
+}
 
 document.getElementById( "bici_leggera" ).insertAdjacentHTML( "beforeend" , 
 
 `
 
-<li>La bici più leggera è ${ nome } con un peso complessivo di ${ peso } grammi!</li>
+<li>La bici più leggera è ${ biciLeggera.nome } con un peso complessivo di ${ biciLeggera.peso } grammi!</li>
 
 `
 ) ;
+
